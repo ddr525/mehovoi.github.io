@@ -67,3 +67,10 @@ ul {
         max-width: 750px
     }
 }
+
+
+@media (max-width:769px) {
+    .main .path{
+        display: none;
+    }
+}
