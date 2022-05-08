@@ -135,11 +135,11 @@ header.header {
     text-align: center
 }
 
-.main-logo {
+.header__main .main-logo {
     margin-top: -15px
 }
 
-.main-logo img {
+.header__main .main-logo img {
     border: 0;
     vertical-align: top;
     max-width: 100%;
@@ -298,26 +298,92 @@ ul.navbar__menu li a:hover {
 
 @media (min-width:770px) {
     .navbar .close-menu {
-        display: none
+        display: none;
+    }
+
+    .header__mobile{
+        display: none;
     }
 }
 
 @media (max-width:769px) {
+    .header__mobile{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        z-index: 9;
+        position: fixed;
+        height: 80px;
+        background: #fff;
+        top: 0; 
+        box-shadow: black 0px -15px 20px;
+    }
+    .header__mobile .open-menu__block{
+        display: block;
+        padding: 25px 15px;
+        width: 10%;
+    }
+    .open-menu, .open-menu::after, .open-menu::before {
+        z-index: 1;
+        display: block;
+        background-color: #000;
+        position: absolute;
+        height: 1px;
+        width: 18px;
+        border-radius: 2px;
+    }
+    .open-menu::after{
+        content: '';
+        margin-top: 5px;
+    }
+    .open-menu::before{
+        content: '';
+        margin-top: -5px;
+    }
 
     .header__main,
     .header__topbar {
-        display: none
+        display: none;
+    }
+
+    .header__mobile .main-logo{
+        width: 80%;
+        text-align: center;
+    }
+
+    .header__mobile .main-logo img{
+        max-height: 70px;    
+        border: 0;
+        vertical-align: top;
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .header__mobile .header__login {
+        width: 10%;
+        padding: 25px 0;
+        text-align: center;
     }
 
     .navbar {
-        display: none;
-        width: 280px;
-        box-shadow: 0 1px 12px 2px hsl(0deg 0% 56% / 30%);
         position: fixed;
         top: 0;
+        left: 0;
+        width: 280px;
+        box-shadow: 0 1px 12px 2px hsl(0deg 0% 56% / 30%);
         height: 100vh;
         z-index: 999;
-        background-color: #fff
+        background-color: #fff;
+        -webkit-transform: translate3d(-280px,0,0);
+        transform: translate3d(-280px,0,0);
+        -webkit-transition: all .5s ease-in-out 0s;
+        transition: all .5s ease-in-out 0s;
+    }
+
+    .navbar.open {
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
     }
 
     .navbar .close-menu {

@@ -99,3 +99,36 @@
         margin: 0 1% 35px 1%
     }
 }
+
+@media (max-width:769px) {
+    main.main {
+        margin-top: 80px;
+    }
+
+    main.main .container {
+        padding: 0;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .main__category .category-block {
+        width: 31%;
+    }
+}
+
+@media (max-width: 481px) {
+    .main__category .category-block {
+        width: 100%;
+    }
+
+    .main .main__banner .main__banner-block {
+        overflow: hidden;
+    }
+    .main__banner .main__banner-block a img{
+        position: relative;
+        width: 200%;
+        margin-left: -50%;
+    }
+}
+
+
